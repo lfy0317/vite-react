@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     Component: DefaultLayout,
     children: [
       {
-        path: RouterPath.CHAT,
+        path: RouterPath.CHAT_ID,
         Component: lazy(components["/page4/index.tsx"])
       }
     ]

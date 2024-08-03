@@ -4,5 +4,6 @@ export enum RouterPath {
 
   PAGE_4 = "/page4",
 
-  CHAT = "/chat"
+  CHAT = "/chat",
+  CHAT_ID = "/chat/:id"
 }
