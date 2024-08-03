@@ -7,6 +7,7 @@ specifiers:
   '@typescript-eslint/parser': ^7.15.0
   '@vitejs/plugin-react': ^4.3.1
   antd: ^5.19.4
+  dayjs: ^1.11.12
   eslint: ^8.57.0
   eslint-config-prettier: ^9.1.0
   eslint-plugin-prettier: ^5.2.1
@@ -15,13 +16,16 @@ specifiers:
   prettier: ^3.3.3
   react: ^18.3.1
   react-dom: ^18.3.1
+  react-router-dom: ^6.26.0
   typescript: ^5.2.2
   vite: ^5.3.4
 
 dependencies:
   antd: 5.19.4_react-dom@18.3.1+react@18.3.1
+  dayjs: 1.11.12
   react: 18.3.1
   react-dom: 18.3.1_react@18.3.1
+  react-router-dom: 6.26.0_react-dom@18.3.1+react@18.3.1
 
 devDependencies:
   '@types/react': 18.3.3
@@ -763,6 +767,11 @@ packages:
       rc-util: 5.43.0_react-dom@18.3.1+react@18.3.1
       react: 18.3.1
       react-dom: 18.3.1_react@18.3.1
+    dev: false
+
+  /@remix-run/router/1.19.0:
+    resolution: {integrity: sha512-zDICCLKEwbVYTS6TjYaWtHXxkdoUvD/QXvyVZjGCsWz5vyH7aFeONlPffPdW+Y/t6KT0MgXb2Mfjun9YpWN1dA==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /@rollup/rollup-android-arm-eabi/4.19.2:
@@ -2509,6 +2518,29 @@ packages:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-router-dom/6.26.0_react-dom@18.3.1+react@18.3.1:
+    resolution: {integrity: sha512-RRGUIiDtLrkX3uYcFiCIxKFWMcWQGMojpYZfcstc63A1+sSnVgILGIm9gNUA6na3Fm1QuPGSBQH2EMbAZOnMsQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.19.0
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+      react-router: 6.26.0_react@18.3.1
+    dev: false
+
+  /react-router/6.26.0_react@18.3.1:
+    resolution: {integrity: sha512-wVQq0/iFYd3iZ9H2l3N3k4PL8EEHcb0XlU2Na8nEwmiXgIUElEH6gaJDtUQxJ+JFzmIXaQjfdpcGWaM6IoQGxg==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.19.0
+      react: 18.3.1
+    dev: false
 
   /react/18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
