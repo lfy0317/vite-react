@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 function DefaultLayout() {
   return (
     <div style={{ display: "flex", gap: 20 }}>
-      <Suspense fallback={<div>loading。。。</div>}>
+      <Suspense fallback={<div />}>
         <Outlet />
       </Suspense>
     </div>

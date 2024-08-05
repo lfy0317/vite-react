@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/nprogress': ^0.2.3
   '@types/react': ^18.3.3
   '@types/react-dom': ^18.3.0
   '@typescript-eslint/eslint-plugin': ^7.15.0
@@ -13,6 +14,7 @@ specifiers:
   eslint-plugin-prettier: ^5.2.1
   eslint-plugin-react-hooks: ^4.6.2
   eslint-plugin-react-refresh: ^0.4.7
+  nprogress: ^0.2.0
   prettier: ^3.3.3
   react: ^18.3.1
   react-dom: ^18.3.1
@@ -23,11 +25,13 @@ specifiers:
 dependencies:
   antd: 5.19.4_react-dom@18.3.1+react@18.3.1
   dayjs: 1.11.12
+  nprogress: 0.2.0
   react: 18.3.1
   react-dom: 18.3.1_react@18.3.1
   react-router-dom: 6.26.0_react-dom@18.3.1+react@18.3.1
 
 devDependencies:
+  '@types/nprogress': 0.2.3
   '@types/react': 18.3.3
   '@types/react-dom': 18.3.0
   '@typescript-eslint/eslint-plugin': 7.18.0_740e2a3a730ec04b8ba310da19473028
@@ -933,6 +937,10 @@ packages:
 
   /@types/estree/1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
+    dev: true
+
+  /@types/nprogress/0.2.3:
+    resolution: {integrity: sha512-k7kRA033QNtC+gLc4VPlfnue58CM1iQLgn1IMAU8VPHGOj7oIHPp9UlhedEnD/Gl8evoCjwkZjlBORtZ3JByUA==}
     dev: true
 
   /@types/prop-types/15.7.12:
@@ -1883,6 +1891,10 @@ packages:
   /node-releases/2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
     dev: true
+
+  /nprogress/0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: false
 
   /once/1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}

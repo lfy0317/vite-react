@@ -1,5 +1,6 @@
 import { Suspense, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+// import { Loading } from "../compontents/Loading";
 import { RouterContext } from "../routes/router-context";
 
 function Layout() {
@@ -14,7 +15,7 @@ function Layout() {
           </li>
         ))}
       </ul>
-      <Suspense fallback={<div>loading。。。</div>}>
+      <Suspense fallback={<div>loading...</div>}>
         <Outlet />
       </Suspense>
     </div>

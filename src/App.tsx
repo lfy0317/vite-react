@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { RouterProvider } from "react-router-dom";
 import { router, RouterContext, setPermissionRouter } from "./routes";
+import { NProgressLoading } from "./compontents/NProgressLoading";
 import { getAdminMenus } from "./service";
 import type { Route } from "./types/router";
 import "./App.css";
@@ -19,7 +20,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div>loading...</div>;
+    return <NProgressLoading />;
   }
 
   return (

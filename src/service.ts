@@ -6,17 +6,17 @@ export const getAdminMenus = (): Promise<Route[]> => {
       resolve([
         {
           name: "page1",
-          route: "/page1",
+          route: "/page/page1",
           filePath: "/page1/index.tsx"
         },
         {
           name: "page2",
-          route: "/page2",
+          route: "/page/page2",
           filePath: "/page2/index.tsx"
         },
         {
           name: "page3",
-          route: "/page3",
+          route: "/page/page3",
           filePath: "/page3/index.tsx"
         }
       ]);
@@ -30,7 +30,7 @@ export const getUserMenus = (): Promise<Route[]> => {
       resolve([
         {
           name: "page1",
-          route: "/page1",
+          route: "/page/page1",
           filePath: "/page1/index.tsx"
         }
       ]);

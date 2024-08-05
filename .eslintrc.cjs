@@ -18,8 +18,8 @@ module.exports = {
    * "error" 或 2  ==>  规则作为一个错误（代码不能执行，界面报错）
    */
   rules: {
-    "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
-    "prettier/prettier": "error",
+    "react-refresh/only-export-components": ["warn", { allowConstantExport: true }], // React 组件更新导出规则
+    "prettier/prettier": "error", // 美化代码风格
 
     "@typescript-eslint/no-explicit-any": "off" // 禁止使用 any 类型
   }
