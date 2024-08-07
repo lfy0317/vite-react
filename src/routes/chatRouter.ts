@@ -1,0 +1,19 @@
+import { WechatWorkOutlined, SearchOutlined } from "@ant-design/icons";
+import { RouterPath } from "./routerConfig";
+
+const chatRouter = [
+  {
+    name: "ChatGLM",
+    route: RouterPath.CHAT_GLM,
+    filePath: "/chat/chatGLM/index.tsx",
+    icon: WechatWorkOutlined
+  },
+  {
+    name: "AI搜索",
+    route: RouterPath.CHAT_AI_SEARCH,
+    filePath: "/chat/AISearch/index.tsx",
+    icon: SearchOutlined
+  }
+];
+
+export default chatRouter;

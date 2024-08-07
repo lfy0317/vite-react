@@ -1,25 +1,14 @@
+import { pagePermissionRouter, pageRouter } from "./routes/pageRouter";
 import type { Route } from "./types/router";
 
+/**
+ * 模拟服务端返回权限路由
+ * @returns
+ */
 export const getAdminMenus = (): Promise<Route[]> => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve([
-        {
-          name: "page1",
-          route: "/page/page1",
-          filePath: "/page1/index.tsx"
-        },
-        {
-          name: "page2",
-          route: "/page/page2",
-          filePath: "/page2/index.tsx"
-        },
-        {
-          name: "page3",
-          route: "/page/page3",
-          filePath: "/page3/index.tsx"
-        }
-      ]);
+      resolve(pagePermissionRouter);
     }, 1000);
   });
 };
@@ -27,13 +16,7 @@ export const getAdminMenus = (): Promise<Route[]> => {
 export const getUserMenus = (): Promise<Route[]> => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve([
-        {
-          name: "page1",
-          route: "/page/page1",
-          filePath: "/page1/index.tsx"
-        }
-      ]);
+      resolve(pageRouter);
     }, 1000);
   });
 };

@@ -4,6 +4,11 @@
   background-color: #242424;
 }
 
+body {
+  margin: 0;
+  /* height: 100vh; */
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

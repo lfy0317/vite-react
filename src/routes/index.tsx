@@ -4,17 +4,30 @@ import { RouterContext } from "./router-context";
 import { RouterPath } from "./routerConfig";
 import { Layout, ChatLayout } from "../layout";
 import NotFound from "../NotFound";
-import Page4 from "../pages/page4";
+import { page4Router } from "./pageRouter";
+import chatRouter from "./chatRouter";
 import type { Route } from "../types/router";
 
-const modules = import.meta.glob("../pages/*/index.tsx") as Record<string, () => Promise<any>>;
+const modules = import.meta.glob(["../pages/*/index.tsx", "../pages/chat/*/index.tsx"]) as Record<
+  string,
+  () => Promise<any>
+>;
 const components = Object.keys(modules).reduce<Record<string, any>>((prev, cur) => {
   prev[cur.replace("../pages", "")] = modules[cur];
   return prev;
 }, {});
 
+// 生成路由
+function generateRoutes(routes: Route[]) {
+  return routes.map(item => ({
+    path: item.route,
+    Component: lazy(components[item.filePath])
+  }));
+}
+
 const router: any = createBrowserRouter(
   [
+    ...generateRoutes(page4Router),
     {
       path: RouterPath.ROOT,
       loader: () => {
@@ -36,17 +49,20 @@ const router: any = createBrowserRouter(
       children: []
     },
     {
-      path: RouterPath.PAGE_4,
-      Component: Page4
-    },
-    {
       path: RouterPath.CHAT,
       Component: ChatLayout,
+      // loader: () => {
+      //   if (location.pathname === RouterPath.CHAT) {
+      //     return redirect(RouterPath.CHAT_GLM);
+      //   }
+      //   return true;
+      // },
       children: [
-        {
-          path: RouterPath.CHAT_ID,
-          Component: lazy(components["/chat/index.tsx"])
-        }
+        // {
+        //   path: RouterPath.CHAT_ID,
+        //   Component: lazy(components["/chat/index.tsx"])
+        // },
+        ...generateRoutes(chatRouter)
       ]
     },
     {
@@ -65,10 +81,7 @@ const router: any = createBrowserRouter(
 function setPermissionRouter(routes: Route[]) {
   console.info(components);
   // 获取菜单后动态添加路由
-  router.routes[1].children = routes.map(item => ({
-    path: item.route,
-    Component: lazy(components[item.filePath])
-  }));
+  router.routes[1].children = generateRoutes(routes);
 }
 
-export { router, components, RouterContext, setPermissionRouter, RouterPath };
+export { router, components, RouterContext, generateRoutes, setPermissionRouter, RouterPath };
