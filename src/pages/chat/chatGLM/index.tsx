@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { ChatInput } from "../compontents/ChatInput";
 
 function ChatGLM() {
   // 获取 route 对象参数
@@ -9,7 +10,12 @@ function ChatGLM() {
     console.info(params);
   }, [params]);
 
-  return <div>Chat GLM</div>;
+  return (
+    <div>
+      Chat GLM
+      <ChatInput />
+    </div>
+  );
 }
 
 export default ChatGLM;

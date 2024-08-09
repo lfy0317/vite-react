@@ -8,12 +8,16 @@ import { page4Router } from "./pageRouter";
 import chatRouter from "./chatRouter";
 import type { Route } from "../types/router";
 
-const modules = import.meta.glob(["../pages/*/index.tsx", "../pages/chat/*/index.tsx"]) as Record<
-  string,
-  () => Promise<any>
->;
+type PageModule = () => Promise<{ default: any }>;
+
+const modules = import.meta.glob(["@/pages/*/index.tsx", "@/pages/chat/*/index.tsx"]) as {
+  [path: string]: PageModule;
+};
 const components = Object.keys(modules).reduce<Record<string, any>>((prev, cur) => {
-  prev[cur.replace("../pages", "")] = modules[cur];
+  const filePath = cur.replace("/src/pages", "@/pages");
+  console.log(modules, filePath);
+  
+  prev[filePath] = modules[cur];
   return prev;
 }, {});
 
@@ -32,7 +36,7 @@ const router: any = createBrowserRouter(
       path: RouterPath.ROOT,
       loader: () => {
         if (location.pathname === RouterPath.ROOT) {
-          return redirect(RouterPath.CHAT);
+          return redirect(RouterPath.CHAT_GLM);
         }
         return true;
       }
@@ -40,22 +44,22 @@ const router: any = createBrowserRouter(
     {
       path: RouterPath.PAGE,
       Component: Layout,
-      loader: () => {
-        if (location.pathname === RouterPath.PAGE) {
-          return redirect("/page/page1");
-        }
-        return true;
-      },
+      // loader: () => {
+      //   if (location.pathname === RouterPath.PAGE) {
+      //     return redirect("/page/page1");
+      //   }
+      //   return true;
+      // },
       children: []
     },
     {
       path: RouterPath.CHAT,
       Component: ChatLayout,
       // loader: () => {
-      //   if (location.pathname === RouterPath.CHAT) {
-      //     return redirect(RouterPath.CHAT_GLM);
-      //   }
-      //   return true;
+      //     if (location.pathname === RouterPath.CHAT) {
+      //       return redirect(RouterPath.CHAT_GLM);
+      //     }
+      //     return true;
       // },
       children: [
         // {

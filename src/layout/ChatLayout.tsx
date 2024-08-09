@@ -1,10 +1,10 @@
 import React, { Suspense, useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Layout, Menu, Spin, theme, Button } from "antd";
 import type { MenuProps } from "antd";
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import "./index.css";
-import chatRouter from "../routes/chatRouter";
+import chatRouter from "@/routes/chatRouter";
 // import { NProgressLoading } from "../compontents/NProgressLoading";
 
 const { Sider, Content } = Layout;
@@ -23,6 +23,11 @@ function ChatLayout() {
   const {
     token: { colorBgContainer, borderRadiusLG }
   } = theme.useToken();
+  const navigate = useNavigate();
+
+  const onClickMenu: MenuProps["onClick"] = ({ key }) => {
+    navigate(key);
+  };
 
   return (
     <Layout hasSider style={{ height: "100vh" }}>
@@ -35,7 +40,7 @@ function ChatLayout() {
             style={{ fontSize: "16px" }}
           />
         </div>
-        <Menu mode="inline" defaultSelectedKeys={[pathname]} items={items} theme="dark" />
+        <Menu mode="inline" defaultSelectedKeys={[pathname]} items={items} theme="dark" onClick={onClickMenu} />
       </Sider>
       <Layout>
         <Content style={{ margin: "24px 16px", overflow: "initial" }}>

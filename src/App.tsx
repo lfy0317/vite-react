@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { RouterProvider } from "react-router-dom";
 import { router, RouterContext, setPermissionRouter } from "./routes";
-import { NProgressLoading } from "./compontents/NProgressLoading";
+import { NProgressLoading } from "@/compontents";
 import { getAdminMenus } from "./service";
 import type { Route } from "./types/router";
 import "./App.css";

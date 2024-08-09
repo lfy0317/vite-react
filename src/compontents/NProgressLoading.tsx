@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
-export function NProgressLoading() {
+export default function NProgressLoading() {
   const [visible, setVisible] = useState<boolean>(false);
 
   useEffect(() => {
