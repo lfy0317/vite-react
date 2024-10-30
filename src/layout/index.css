@@ -1,6 +1,19 @@
 .demo-logo-vertical {
-    height: 32px;
-    margin: 16px;
-    background: rgba(255, 255, 255, .2);
-    border-radius: 6px;
+    /* height: 42px; */
+    margin: 16px 24px;
+    /* background: rgba(255, 255, 255, .2); */
+    /* border-radius: 6px; */
+}
+
+.create-chat-btn-wrapper {
+    padding: 0 24px 16px;
+}
+
+.create-chat-btn {
+    background: linear-gradient(180deg, #037667 0%, #005A4E 79%), #0FCAC8;
+    border: none;
+}
+
+.create-chat-btn:not(:disabled):not(.ant-btn-disabled):hover {
+    background: linear-gradient(180deg, #037667 0%, #005A4E 79%), #0FCAC8;
 }

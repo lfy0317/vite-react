@@ -1,5 +1,5 @@
 import { pagePermissionRouter, pageRouter } from "./routes/pageRouter";
-import type { Route } from "./types/router";
+import type { Route } from "@/types/router";
 
 /**
  * 模拟服务端返回权限路由
