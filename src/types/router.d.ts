@@ -1,5 +1,5 @@
 export interface Route {
-  name: string;
-  route: string;
-  filePath: string;
+    name: string;
+    route: string;
+    filePath: string;
 }

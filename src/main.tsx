@@ -7,9 +7,9 @@ import App from "./App.tsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <ConfigProvider theme={{ cssVar: true }} locale={zh_CN}>
-      <App />
-    </ConfigProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <ConfigProvider theme={{ cssVar: true }} locale={zh_CN}>
+            <App />
+        </ConfigProvider>
+    </React.StrictMode>
 );

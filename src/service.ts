@@ -6,17 +6,17 @@ import type { Route } from "./types/router";
  * @returns
  */
 export const getAdminMenus = (): Promise<Route[]> => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(pagePermissionRouter);
-    }, 1000);
-  });
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(pagePermissionRouter);
+        }, 1000);
+    });
 };
 
 export const getUserMenus = (): Promise<Route[]> => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(pageRouter);
-    }, 1000);
-  });
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(pageRouter);
+        }, 1000);
+    });
 };
