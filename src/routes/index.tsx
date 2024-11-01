@@ -1,7 +1,7 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 import { RouterPath } from "./routerConfig";
-import { Layout, ChatLayout } from "../layout";
-import NotFound from "../NotFound";
+import { Layout, ChatLayout } from "@/layout";
+import NotFound from "@/pages/otherPage/NotFound";
 import { page4Router } from "./pageRouter";
 import chatRouter from "./chatRouter";
 import generateRoutes from "./utils/generateRoutes";

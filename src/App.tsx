@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes";
-import { RouterContext } from "./routes/router-context";
+import { AppContext } from "@/store/app-context";
+import Store from "@/store";
 import { setPermissionRouter } from "./routes/utils/setPermissionRouter";
 import { NProgressLoading } from "@/compontents";
 import { getAdminMenus } from "./service";
 import type { Route } from "./types/router";
+import { useLocalStore } from "mobx-react";
 import "./App.css";
 
-function App() {
+const App = () => {
+    const store = useLocalStore(() => new Store());
     const [menus, setMenus] = useState<Array<Route>>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -26,10 +29,10 @@ function App() {
     }
 
     return (
-        <RouterContext.Provider value={{ menus }}>
+        <AppContext.Provider value={{ menus, store }}>
             <RouterProvider router={router} />
-        </RouterContext.Provider>
+        </AppContext.Provider>
     );
-}
+};
 
 export default App;
