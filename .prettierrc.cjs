@@ -17,7 +17,7 @@ module.exports = {
 	// 多行时尽可能打印尾随逗号 可选值"<none|es5|all>"
 	trailingComma: "none",
 	// 在对象，数组括号与文字之间加空格 "{ foo: bar }" (true：有，false：没有)
-	bracketSpacing: true,
+	bracketSpacing: false,
 	// 将 > 多行元素放在最后一行的末尾，而不是单独放在下一行 (true：放末尾，false：单独一行)
 	bracketSameLine: false,
 	// (x) => {} 箭头函数参数只有一个时是否要有小括号 (avoid：省略括号，always：不省略括号)

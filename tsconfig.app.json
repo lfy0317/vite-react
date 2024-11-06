@@ -27,7 +27,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["@svgr/webpack"]
   },
   "include": ["src"]
 }
